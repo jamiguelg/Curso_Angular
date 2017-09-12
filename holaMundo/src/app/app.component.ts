@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Hola Mundo';
+  empresa = 'Indra';
+  numeros = '';
+  
+  constructor() {
+    for (var a = 0; a < 100; a++) {
+      this.numeros += a;
+    }
+  }  //i = 0;
+
+
+  
 }
