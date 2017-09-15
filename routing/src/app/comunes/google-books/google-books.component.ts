@@ -23,5 +23,6 @@ export class GoogleBooksComponent implements OnInit {
 	    error => console.error(error)
 
     );
+    this.titulo = '';
   }
 }

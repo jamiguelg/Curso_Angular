@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -32,7 +32,7 @@ export interface Libro {
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule, routing, HttpModule, BrowserModule
+    FormsModule, routing, HttpModule, BrowserModule, JsonpModule
   ],
   declarations: [CabeceraComponent, PieComponent, FormularioComponent, IdeasComponent,
    NoticiaComponent, SelectComponent, PadreComponent, HijoComponent, ListaCompraComponent, 
