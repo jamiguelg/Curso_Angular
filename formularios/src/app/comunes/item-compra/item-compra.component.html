@@ -1,0 +1,5 @@
+    <div >
+        <input type="checkbox" [(ngModel)]="tarea.selected" />
+        <span [style.textDecoration]="(tarea.selected)?'line-through':''">{{tarea.nombre}}</span>
+        <button (click)="deleteTarea(i)">Borrar</button>
+      </div>

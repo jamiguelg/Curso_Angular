@@ -1,0 +1,16 @@
+
+<hr/>
+
+<p>Introduce una idea nueva 
+  <input name="idea" [(ngModel)] = "nuevaIdea" />
+  <button (click)="addIdea()">Añadir</button>
+</p>
+
+<button (click)="mostrarIdeas=!mostrarIdeas">{{(mostrarIdeas)?"Ocultar ideas":"Mostrar Ideas"}}</button>
+
+<div *ngIf="mostrarIdeas">
+  <p>Lista de ideas</p>
+  <ul>
+    <li *ngFor="let idea of ideas">{{idea}}</li>
+  </ul>
+</div>

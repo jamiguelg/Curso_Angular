@@ -1,0 +1,27 @@
+<hr/>
+<p> Selecciona impresora:<br/>
+  Lexmark:<input type="radio" name="" [(ngModel)]="impresora" value = "Lexmark"><br/>
+  HP:<input type="radio" name="" [(ngModel)]="impresora" value = "HP"><br/>
+  Epson:<input type="radio" name="" [(ngModel)]="impresora" value = "Epson"><br/>
+</p>
+
+<p>Selección de opciones<br/>
+  Imprimir resultado: <input type="checkbox" [(ngModel)]="print" /><br/>
+  Tono claro: <input type="checkbox"  [(ngModel)]="claro"/>
+</p>
+
+
+
+<p> Provincia:
+  <select [(ngModel)]="provinciaSeleccionada">
+      <option *ngFor = "let provincia of provincias" [ngValue]="provincia">{{provincia.nombre}}</option>
+  </select>
+</p>
+<hr/>
+
+<h2> Resultados </h2>
+
+<p>Opción print seleccionada: {{print}}</p>
+<p>Opción claro seleccionada: {{claro}}</p>
+<p>Opción de color seleccionada: {{color}}</p>
+<p>Provincia: {{provinciaSeleccionada.nombre}} [{{provinciaSeleccionada.id}}]</p>
