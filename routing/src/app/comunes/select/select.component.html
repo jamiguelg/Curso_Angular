@@ -1,0 +1,43 @@
+<hr/>
+<button (click) = "mostrarComponente = !mostrarComponente" >{{(mostrarComponente)?'Ocultar':'Mostrar'}} componente impresoras</button><br/><br/>
+<div *ngIf="mostrarComponente">
+
+  <p> Selecciona impresora:<br/>
+      <span *ngFor="let impresora of impresoras">
+          <label>{{impresora}}</label>
+          <input type="radio" name="" [(ngModel)]="impresoraSeleccionada" [value] = "impresora" (change)="pasos = 1"><br/>
+      </span>
+  </p>
+
+    <p [hidden]="pasos<=0"> Selecciona provincia:<br/>
+        <span *ngFor="let provincia of provincias">
+            <label>{{provincia.nombre}}</label>
+            <input type="radio" name="" [(ngModel)]="provinciaSeleccionada" [value] = "provincia" (change)="pasos = 2"><br/>
+        </span>
+    </p>
+
+
+    <p [hidden]="pasos<=1">Selección de opciones<br/>
+      Imprimir resultado: <input type="checkbox" [(ngModel)]="print"  (change)="pasos = 3"/><br/>
+      Tono claro: <input type="checkbox"  [(ngModel)]="claro" (change)="pasos = 3"/>
+    </p>
+
+
+
+    <p [hidden]="pasos<=2"> Provincia:
+      <select [(ngModel)]="provinciaSeleccionada"  (ngModelChange)="pasos = 4">
+          <option *ngFor = "let provincia of provincias" [ngValue]="provincia">{{provincia.nombre}}</option>
+      </select>
+    </p>
+    <div  *ngIf="pasos>3">
+      <hr/>
+
+      <h2> Resultados </h2>
+
+      <p>Impresora seleccionada: {{impresoraSeleccionada}}</p>
+      <p>Opción print seleccionada: {{print}}</p>
+      <p>Opción claro seleccionada: {{claro}}</p>
+      <p>Provincia: {{provinciaSeleccionada.nombre}} [{{provinciaSeleccionada.id}}]</p>
+    </div>
+
+</div>

@@ -1,0 +1,11 @@
+
+<hr/>
+<button (click) = "mostrarComponente = !mostrarComponente" >{{(mostrarComponente)?'Ocultar':'Mostrar'}} componente libros</button><br/><br/>
+<div *ngIf="mostrarComponente">
+
+
+    <h2>Libros</h2>
+    <ul>
+      <li *ngFor="let libro of libros">{{libro}}</li>
+    </ul>
+</div>
