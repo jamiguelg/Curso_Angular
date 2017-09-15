@@ -1,6 +1,4 @@
-<hr/>
-<button (click) = "mostrarComponente = !mostrarComponente" >{{(mostrarComponente)?'Ocultar':'Mostrar'}} componente Lista compra</button><br/><br/>
-<div *ngIf="mostrarComponente">
+
 
   <input type="text" [(ngModel)]="nuevaTarea.nombre"/> <button (click)="addTarea()">Añadir</button>
 
@@ -10,4 +8,3 @@
       <app-item-compra (borrar)="deleteTarea(i)" *ngFor="let tarea of listaTareas; let i = index" [id] = "i" [tarea] = "tarea"></app-item-compra>
   </div>
 
-</div>

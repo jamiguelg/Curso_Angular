@@ -1,3 +1,6 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -13,20 +16,32 @@ import { ListaCompraComponent } from './lista-compra/lista-compra.component';
 import { ItemCompraComponent } from './item-compra/item-compra.component';
 import { LibrosService } from './libros/libros.service';
 import { LibrosComponent } from './libros/libros.component';
+import { NavegacionComponent } from './navegacion/navegacion.component';
+
+import { routing } from './app.routing';
+import { DetalleLibroComponent } from './libros/detalle-libro.component';
+import { HomeComponent } from './home/home.component';
+import { GoogleBooksComponent } from './google-books/google-books.component';
 
 
+export interface Libro {
+  titulo: string;
+  id: number;
+}
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule, routing, HttpModule, BrowserModule
   ],
   declarations: [CabeceraComponent, PieComponent, FormularioComponent, IdeasComponent,
-   NoticiaComponent, SelectComponent, PadreComponent, HijoComponent, ListaCompraComponent, ItemCompraComponent, LibrosComponent],
+   NoticiaComponent, SelectComponent, PadreComponent, HijoComponent, ListaCompraComponent, 
+   ItemCompraComponent, LibrosComponent, NavegacionComponent, DetalleLibroComponent, HomeComponent, GoogleBooksComponent],
   exports: [
     CabeceraComponent, PieComponent, FormularioComponent, IdeasComponent,
      NoticiaComponent, SelectComponent, PadreComponent, HijoComponent, ListaCompraComponent,
-     ItemCompraComponent, LibrosComponent
+     ItemCompraComponent, LibrosComponent, NavegacionComponent, RouterModule, DetalleLibroComponent,
+     HomeComponent, GoogleBooksComponent
   ],
   providers: [
     LibrosService
@@ -34,3 +49,5 @@ import { LibrosComponent } from './libros/libros.component';
 
 })
 export class ComunesModule { }
+
+

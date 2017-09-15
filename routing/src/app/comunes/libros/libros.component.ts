@@ -1,3 +1,4 @@
+import { Libro } from './../comunes.module';
 import { LibrosService } from './libros.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,11 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LibrosComponent implements OnInit {
 
-  constructor(private servicioLibros: LibrosService) { 
+  constructor(private servicioLibros: LibrosService) {
 
 
   }
-  public libros: Array<string>;
+  public libros: Array<Libro>;
   ngOnInit() {
     this.servicioLibros.getLibros('españoles')
     .then(libros => this.libros = libros)

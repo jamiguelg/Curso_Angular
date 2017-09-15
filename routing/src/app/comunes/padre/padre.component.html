@@ -1,10 +1,6 @@
-<hr/>
-<button (click) = "mostrarComponente = !mostrarComponente" >{{(mostrarComponente)?'Ocultar':'Mostrar'}} componente comunicación</button><br/><br/>
-<div *ngIf="mostrarComponente">
+
 
   <p >
     Comunicamos con el hijo y le pasamos el texto a mostrar <input type="text" [(ngModel)]="tituloPadre" />
     <app-hijo [tituloHijo] = "tituloPadre" (borrar)="borraTitulo($event)"></app-hijo>
   </p>
-
-</div>

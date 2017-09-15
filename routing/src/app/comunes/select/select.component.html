@@ -1,6 +1,3 @@
-<hr/>
-<button (click) = "mostrarComponente = !mostrarComponente" >{{(mostrarComponente)?'Ocultar':'Mostrar'}} componente impresoras</button><br/><br/>
-<div *ngIf="mostrarComponente">
 
   <p> Selecciona impresora:<br/>
       <span *ngFor="let impresora of impresoras">
@@ -40,4 +37,3 @@
       <p>Provincia: {{provinciaSeleccionada.nombre}} [{{provinciaSeleccionada.id}}]</p>
     </div>
 
-</div>

@@ -1,10 +1,7 @@
-<hr/>
-<button (click) = "mostrarComponente = !mostrarComponente" >{{(mostrarComponente)?'Ocultar':'Mostrar'}} componente formulario</button><br/><br/>
-<div *ngIf="mostrarComponente">
+
 
     
     Introduce el nombre: <input type="text" name="nombre" id="nombre" [(ngModel)]="nombre" />
     <button (click)="borraNombre()">Borrar nombre</button>
 
     <p>Bienvenido: {{nombre}}
-</div>

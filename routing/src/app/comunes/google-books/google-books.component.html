@@ -1,0 +1,6 @@
+Título: <input type="text" [(ngModel)]="titulo"/><button (click)="cargaLibros()">Buscar</button>
+
+<p>
+  Buscando  {{titulo}}
+</p>
+<div *ngFor="let libro of libros"> {{libro.volumeInfo.title}}</div>
